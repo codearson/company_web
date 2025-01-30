@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { useState } from "react";
 import { Button } from "./ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
@@ -15,6 +16,7 @@ const formSchema = z.object({
 });
 
 const LetsTalkSection = () => {
+  const [result, setResult] = useState("");
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -24,10 +26,31 @@ const LetsTalkSection = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast.success("Message sent successfully!");
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setResult("Sending...");
+    const formData = new FormData();
+    formData.append("access_key", "d1d07edd-5dad-4511-a5fa-7d50945e6cc0");
+    formData.append("name", values.name);
+    formData.append("email", values.email);
+    formData.append("message", values.message);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      toast.success("Message sent successfully!");
+      setResult("Form Submitted Successfully");
+      form.reset();
+      setTimeout(() => {
+        setResult("");
+      }, 5000);
+    } else {
+      console.error("Error", data);
+      setResult(data.message);
+    }
   }
 
   return (
@@ -43,82 +66,45 @@ const LetsTalkSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="relative max-w-md mx-auto mt-8"
-            >
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-purple-500/10 rounded-tl-[80px] rounded-br-[20px]" />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-pink-500/10 rounded-br-[80px] rounded-tl-[20px]" />
-              
+              className="relative max-w-md mx-auto mt-8">
               <div className="relative bg-gradient-to-b from-gaming-dark/95 to-gaming-dark/80 backdrop-blur-lg p-8 rounded-tl-[40px] rounded-br-[40px] rounded-tr-xl rounded-bl-xl border border-purple-500/30 shadow-xl shadow-purple-500/10">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-purple-300 font-medium">Name</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Your name" 
-                              {...field} 
-                              className="bg-gaming-dark/50 border-purple-500/30 focus:border-purple-400 transition-colors placeholder:text-purple-300/50 text-purple-100"
-                            />
-                          </FormControl>
-                          <FormMessage className="text-pink-400" />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-purple-300 font-medium">Email</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="your@email.com" 
-                              {...field} 
-                              className="bg-gaming-dark/50 border-purple-500/30 focus:border-purple-400 transition-colors placeholder:text-purple-300/50 text-purple-100"
-                            />
-                          </FormControl>
-                          <FormMessage className="text-pink-400" />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-purple-300 font-medium">Message</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Write your message here..." 
-                              {...field} 
-                              className="bg-gaming-dark/50 border-purple-500/30 focus:border-purple-400 transition-colors placeholder:text-purple-300/50 text-purple-100 min-h-[120px] resize-none"
-                            />
-                          </FormControl>
-                          <FormMessage className="text-pink-400" />
-                        </FormItem>
-                      )}
-                    />
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/20 rounded-tl-2xl rounded-br-2xl"
-                    >
+                    <FormField control={form.control} name="name" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-purple-300 font-medium">Name</FormLabel>
+                        <FormControl>
+                          <Input {...field} className="bg-gaming-dark/50 border-purple-500/30" placeholder="Your name" />
+                        </FormControl>
+                        <FormMessage className="text-pink-400" />
+                      </FormItem>
+                    )} />
+                    <FormField control={form.control} name="email" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-purple-300 font-medium">Email</FormLabel>
+                        <FormControl>
+                          <Input {...field} className="bg-gaming-dark/50 border-purple-500/30" placeholder="your@email.com" />
+                        </FormControl>
+                        <FormMessage className="text-pink-400" />
+                      </FormItem>
+                    )} />
+                    <FormField control={form.control} name="message" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-purple-300 font-medium">Message</FormLabel>
+                        <FormControl>
+                          <Textarea {...field} className="bg-gaming-dark/50 border-purple-500/30 min-h-[120px]" placeholder="Write your message here..." />
+                        </FormControl>
+                        <FormMessage className="text-pink-400" />
+                      </FormItem>
+                    )} />
+                    <Button type="submit" className="w-full bg-gradient-to-r from-purple-500 to-pink-500">
                       Send Message
                     </Button>
                   </form>
                 </Form>
+                {result && <div className="text-center text-purple-300 mt-4">{result}</div>}
               </div>
             </motion.div>
-          </div>
-
-          {/* Background Elements */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-400 rounded-full filter blur-3xl animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-pink-400 rounded-full filter blur-3xl animate-pulse delay-1000" />
           </div>
         </div>
       </div>

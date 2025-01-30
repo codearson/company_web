@@ -5,6 +5,13 @@ import { useIsMobile } from "../hooks/use-mobile";
 const FooterSection = () => {
   const isMobile = useIsMobile();
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  
   return (
     <motion.footer 
       initial={{ opacity: 0, y: 50 }}
@@ -23,10 +30,25 @@ const FooterSection = () => {
           >
             <h3 className="text-xl font-bold text-gaming-primary">Quick Links</h3>
             <div className="grid grid-cols-2 gap-4 text-sm">
-              <div className="space-y-2">
-                <p className="hover:text-gaming-primary transition-colors cursor-pointer">About Us</p>
-                <p className="hover:text-gaming-primary transition-colors cursor-pointer">Services</p>
-                <p className="hover:text-gaming-primary transition-colors cursor-pointer">Contact</p>
+            <div className="space-y-2">
+                <p 
+                  onClick={() => scrollToSection("about")} 
+                  className="hover:text-gaming-primary transition-colors cursor-pointer"
+                >
+                  About Us
+                </p>
+                <p 
+                  onClick={() => scrollToSection("services")} 
+                  className="hover:text-gaming-primary transition-colors cursor-pointer"
+                >
+                  Services
+                </p>
+                <p 
+                  onClick={() => scrollToSection("contact")} 
+                  className="hover:text-gaming-primary transition-colors cursor-pointer"
+                >
+                  Contact
+                </p>
               </div>
               <div className="space-y-2">
                 <p className="hover:text-gaming-primary transition-colors cursor-pointer">Blog</p>
@@ -61,7 +83,7 @@ const FooterSection = () => {
             className="text-center pt-4 border-t border-gaming-secondary"
           >
             <p className="text-sm text-gaming-secondary">
-              © 2024 Your Company. All rights reserved.
+              © 2025 Codearson. All rights reserved.
             </p>
           </motion.div>
         </div>
