@@ -74,7 +74,7 @@ const LetsTalkSection = () => {
                       <FormItem>
                         <FormLabel className="text-purple-300 font-medium">Name</FormLabel>
                         <FormControl>
-                          <Input {...field} className="bg-gaming-dark/50 border-purple-500/30" placeholder="Your name" />
+                          <Input {...field} className="bg-gaming-dark/50 border-purple-500/30" placeholder="Your name" autoComplete="name" />
                         </FormControl>
                         <FormMessage className="text-pink-400" />
                       </FormItem>
@@ -83,7 +83,7 @@ const LetsTalkSection = () => {
                       <FormItem>
                         <FormLabel className="text-purple-300 font-medium">Email</FormLabel>
                         <FormControl>
-                          <Input {...field} className="bg-gaming-dark/50 border-purple-500/30" placeholder="your@email.com" />
+                          <Input {...field} className="bg-gaming-dark/50 border-purple-500/30" placeholder="your@email.com" autoComplete="email" />
                         </FormControl>
                         <FormMessage className="text-pink-400" />
                       </FormItem>
@@ -92,7 +92,7 @@ const LetsTalkSection = () => {
                       <FormItem>
                         <FormLabel className="text-purple-300 font-medium">Message</FormLabel>
                         <FormControl>
-                          <Textarea {...field} className="bg-gaming-dark/50 border-purple-500/30 min-h-[120px]" placeholder="Write your message here..." />
+                          <Textarea {...field} className="bg-gaming-dark/50 border-purple-500/30 min-h-[120px]" placeholder="Write your message here..." autoComplete="off" />
                         </FormControl>
                         <FormMessage className="text-pink-400" />
                       </FormItem>
