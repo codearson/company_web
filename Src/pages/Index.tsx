@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+//import SmoothScrollHero from "../components/AboutUs";
 import SmoothScroll from "../components/SmoothScroll";
 import ServiceSection from "../components/ServiceSection";
 import WhyChooseUs from "../components/WhyChooseUs";
