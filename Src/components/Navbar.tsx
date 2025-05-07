@@ -66,7 +66,20 @@ const Navbar = () => {
   };
 
   const handleLogoClick = () => {
-    navigate("/");
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById("hero");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById("hero");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -85,7 +98,7 @@ const Navbar = () => {
             className="hover:scale-105 transition-all duration-300"
           >
             <img 
-              src="/uploads/8a9dcbb9-560e-4e58-a713-30f02d95e527.png" 
+              src="/uploads/codearsonlogo.png" 
               alt="Codearson Logo" 
               className="h-16 md:h-20 w-auto py-2"
             />
