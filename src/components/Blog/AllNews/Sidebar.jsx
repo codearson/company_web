@@ -47,10 +47,10 @@ const Sidebar = ({ data, style, rtl }) => {
           </h6>
           {
             data.categories.map((category, index) => (
-              <a href="#" className="cat-item" key={index}>
+              <button className="cat-item" key={index}>
                 <span>{ category.title }</span>
                 <span>{ category.count }</span>
-              </a>
+              </button>
             ))
           }
         </div>
@@ -79,21 +79,21 @@ const Sidebar = ({ data, style, rtl }) => {
           <h6 className="title mb-20 text-uppercase fw-normal">
             { rtl ? 'اجتماعي' : 'social' }
           </h6>
-          <a href="#" className="social-icon">
+          <button className="social-icon">
             <i className="fab fa-twitter"></i>
-          </a>
-          <a href="#" className="social-icon">
+          </button>
+          <button className="social-icon">
             <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" className="social-icon">
+          </button>
+          <button className="social-icon">
             <i className="fab fa-pinterest"></i>
-          </a>
-          <a href="#" className="social-icon">
+          </button>
+          <button className="social-icon">
             <i className="fab fa-goodreads-g"></i>
-          </a>
-          <a href="#" className="social-icon">
+          </button>
+          <button className="social-icon">
             <i className="fab fa-linkedin-in"></i>
-          </a>
+          </button>
         </div>
 
         <div className="side-insta mb-50">
@@ -118,7 +118,9 @@ const Sidebar = ({ data, style, rtl }) => {
           </h6>
           <div className="content">
             {
-              data.tags.map((tag, index) => (<a href="#" key={index} className="me-1">{ tag }</a>))
+              data.tags.map((tag, index) => (
+                <button key={index} className="me-1">{ tag }</button>
+              ))
             }
           </div>
         </div>

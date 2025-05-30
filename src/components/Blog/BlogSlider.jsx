@@ -58,8 +58,8 @@ const BlogSlider = ({ style = "4", rtl }) => {
                         <div className="col-lg-6">
                           <div className="cont">
                             <small className="date small mb-20"> 
-                              <a href="#" className="text-uppercase border-end brd-gray pe-3 me-3">{ slide.type }</a>
-                              <i className="far fa-clock me-2"></i>{ rtl ? 'موعد النشر' : 'Posted on' } <a href="#">{ slide.time }</a> 
+                              <span className="text-uppercase border-end brd-gray pe-3 me-3">{ slide.type }</span>
+                              <i className="far fa-clock me-2"></i>{ rtl ? 'موعد النشر' : 'Posted on' } <span>{ slide.time }</span> 
                             </small>
                             <h2 className="title">
                               <Link to={ rtl ? "/rtl-page-single-post" : "/page-single-post-5"}>

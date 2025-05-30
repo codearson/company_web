@@ -16,9 +16,9 @@ const Blogs = ({ blogs, isWide, style, rtl }) => {
               <div className="col-lg-7">
                 <div className="card-body p-0">
                   <small className="d-block date text">
-                    <a href="#" className={`text-uppercase border-end brd-gray pe-3 me-3 color-blue${style} fw-bold`}>{ blog.type }</a>
+                    <span className={`text-uppercase border-end brd-gray pe-3 me-3 color-blue${style} fw-bold`}>{ blog.type }</span>
                     <i className="bi bi-clock me-1"></i>
-                    <a href="#" className="op-8">{ blog.time }</a>
+                    <span className="op-8">{ blog.time }</span>
                   </small>
                   <Link to={ rtl ? "/rtl-page-single-post" : "/page-single-post-5" } className="card-title mb-10">
                     { blog.title }
@@ -29,15 +29,15 @@ const Blogs = ({ blogs, isWide, style, rtl }) => {
                       <span className={`icon-10 rounded-circle d-inline-flex justify-content-center align-items-center text-uppercase bg-blue${style} p-2 me-2 text-white`}>
                         { blog.userImgLetter }
                       </span>
-                      <a href="#">
+                      <span>
                         <small className="text-muted">{ rtl ? 'بواسطة' : 'By' }</small> { blog.username }
-                      </a>
+                      </span>
                     </div>
                     <div className="r-side mt-1">
                       <i className="bi bi-chat-left-text me-1"></i>
-                      <a href="#">{ blog.comments }</a>
+                      <span>{ blog.comments }</span>
                       <i className="bi bi-eye ms-4 me-1"></i>
-                      <a href="#">{ blog.views }</a>
+                      <span>{ blog.views }</span>
                     </div>
                   </div>
                 </div>
@@ -48,27 +48,27 @@ const Blogs = ({ blogs, isWide, style, rtl }) => {
       }
 
       <div className={`pagination style-5 color-${style} justify-content-center mt-60`}>
-        <a href="#" className="active">
+        <button className="active">
           <span>1</span>
-        </a>
-        <a href="#">
+        </button>
+        <button>
           <span>2</span>
-        </a>
-        <a href="#">
+        </button>
+        <button>
           <span>3</span>
-        </a>
-        <a href="#">
+        </button>
+        <button>
           <span>4</span>
-        </a>
-        <a href="#">
+        </button>
+        <button>
           <span>...</span>
-        </a>
-        <a href="#">
+        </button>
+        <button>
           <span>20</span>
-        </a>
-        <a href="#">
+        </button>
+        <button>
           <span className="text">{ rtl ? "التالي" : "next" } <i className="fas fa-chevron-right"></i> </span>
-        </a>
+        </button>
       </div>
     </div>
   )

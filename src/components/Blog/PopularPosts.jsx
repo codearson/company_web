@@ -20,9 +20,9 @@ const PopularPosts = ({ style = "4", rtl }) => {
                   </div>
                   <div className="card-body px-0">
                     <small className="d-block date mt-10 fs-10px fw-bold">
-                      <a href="#" className={`text-uppercase border-end brd-gray pe-3 me-3 color-blue${style}`}>{ rtl ? 'أخبار' : 'News' }</a>
+                      <span className={`text-uppercase border-end brd-gray pe-3 me-3 color-blue${style}`}>{ rtl ? 'أخبار' : 'News' }</span>
                       <i className="bi bi-clock me-1"></i>
-                      <a href="#" className="op-8">{ rtl ? 'موعد النشر' : 'Posted on' } { post.time }</a>
+                      <span className="op-8">{ rtl ? 'موعد النشر' : 'Posted on' } { post.time }</span>
                     </small>
                     <h5 className="fw-bold mt-10 title">
                       <Link to={ rtl ? "/rtl-page-single-post" : "/page-single-post-5" }> 
@@ -36,15 +36,15 @@ const PopularPosts = ({ style = "4", rtl }) => {
                         <span className="icon-20 rounded-circle d-inline-flex justify-content-center align-items-center text-uppercase bg-main p-1 me-2 text-white">
                           { post.userImgLetter }
                         </span>
-                        <a href="#" className="mt-1">
+                        <span className="mt-1">
                           { rtl ? 'بواسطة' : 'By' } { post.username }
-                        </a>
+                        </span>
                       </div>
                       <div className="r-side mt-1">
                         <i className="bi bi-chat-left-text me-1"></i>
-                        <a href="#">{ post.comments }</a>
+                        <span>{ post.comments }</span>
                         <i className="bi bi-eye ms-4 me-1"></i>
-                        <a href="#">{ post.views }</a>
+                        <span>{ post.views }</span>
                       </div>
                     </div>
                   </div>
