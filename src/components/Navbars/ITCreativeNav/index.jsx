@@ -62,6 +62,11 @@ const ITCreativeNav = () => {
               </Link>
             </li> */}
             <li className="nav-item">
+              <Link to="/page-services-app" className={`nav-link ${isActive('/page-services-app') ? 'active' : ''}`} onClick={closeNav}>
+                services
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link to="/page-contact-app" className={`nav-link ${isActive('/page-contact-app') ? 'active' : ''}`} onClick={closeNav}>
                 contact
               </Link>
