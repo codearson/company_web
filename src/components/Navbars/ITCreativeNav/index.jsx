@@ -27,7 +27,7 @@ const ITCreativeNav = () => {
     <nav className="navbar navbar-expand-lg navbar-light style-7" ref={navbarRef}>
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <img src="/assets/img/logo_lgr.png" alt="Iteck Logo" />
+          <img src="/assets/img/codearsonlogo.png" alt="Iteck Logo" />
         </Link>
         <button 
           className={`navbar-toggler ${isNavOpen ? 'collapsed' : ''}`} 
