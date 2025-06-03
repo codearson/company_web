@@ -30,7 +30,7 @@ const Services = () => {
                     <div className="info">
                       <h6>{ service.title }</h6>
                       <p className="text">{ service.description }</p>
-                      <a href={`/services/${service.id}`}> <i className="fal fa-long-arrow-right"></i> Read More  <i className="fal fa-long-arrow-right"></i> </a>
+                      <a href={`/page-services-app`}> <i className="fal fa-long-arrow-right"></i> Read More  <i className="fal fa-long-arrow-right"></i> </a>
                     </div>
                   </div>
                 </div>

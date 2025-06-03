@@ -18,7 +18,10 @@ const Community = () => {
                   <img src={card.icon} alt="" />
                 </div>
                 <div className="inf">
-                  <h5>{ card.info }</h5>
+                  <h5 className={
+                    card.info.includes('@') ? 'contact-email' :
+                    card.info.replace(/\s/g, '').match(/^\+?\d+$/) ? 'contact-phone' : ''
+                  }>{ card.info }</h5>
                 </div>
               </div>
             ))

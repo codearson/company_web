@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const Footer = ({ noWave, rtl }) => {
+const Footer = ({ noWave }) => {
   const location = useLocation();
 
   return (
@@ -17,22 +17,19 @@ const Footer = ({ noWave, rtl }) => {
             <div className="col-lg-8">
               <ul className="links">
                 <li>
-                  <Link to="/" className={location.pathname === '/' ? 'active' : ''}>{ rtl ? 'الرئيسية' : 'Home' }</Link>
+                  <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
                 </li>
                 <li>
-                  <Link to="/page-about-app" className={location.pathname === '/page-about-app' ? 'active' : ''}>{ rtl ? 'من نحن' : 'About' }</Link>
+                  <Link to="/page-about-app" className={location.pathname === '/page-about-app' ? 'active' : ''}>About</Link>
                 </li>
                 <li>
-                  <Link to="/page-portfolio-app" className={location.pathname === '/page-portfolio-app' ? 'active' : ''}>{ rtl ? 'المشاريع' : 'Portfolio' }</Link>
+                  <Link to="/page-portfolio-app" className={location.pathname === '/page-portfolio-app' ? 'active' : ''}>Portfolio</Link>
                 </li>
                 <li>
-                  <Link to="/page-services-app" className={location.pathname === '/page-services-app' ? 'active' : ''}>{ rtl ? 'الخدمات' : 'Services' }</Link>
+                  <Link to="/page-services-app" className={location.pathname === '/page-services-app' ? 'active' : ''}>Services</Link>
                 </li>
-                {/* <li>
-                  <Link to="/page-blog-app" className={location.pathname === '/page-blog-app' ? 'active' : ''}>{ rtl ? 'الاخبار' : 'blog' }</Link>
-                </li> */}
                 <li>
-                  <Link to="/page-contact-app" className={location.pathname === '/page-contact-app' ? 'active' : ''}>{ rtl ? 'اتصل بنا' : 'Contact' }</Link>
+                  <Link to="/page-contact-app" className={location.pathname === '/page-contact-app' ? 'active' : ''}>Contact</Link>
                 </li>
               </ul>
             </div>
@@ -40,7 +37,7 @@ const Footer = ({ noWave, rtl }) => {
         </div>
         <div className="copywrite text-center">
           <small className="small">
-            { rtl ? '© 2022 حقوق التأليف والنشر' : '© 2022 Copyrights by' } <span className="fw-bold text-decoration-underline">Iteck Co.</span> { rtl ? 'كل الحقوق محفوظة. صمم بواسطة' : 'All Rights Reserved. Designed by' } <a href="https://themeforest.net/user/themescamp" className="fw-bold text-decoration-underline">ThemesCamp</a>
+            © 2025 Copyrights by <span className="fw-bold text-decoration-underline">CodeArson Co.</span> All Rights Reserved. Designed by <span className="fw-bold text-decoration-underline">CodeArson Team</span>
           </small>
         </div>
       </div>

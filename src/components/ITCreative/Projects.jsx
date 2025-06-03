@@ -118,7 +118,7 @@ const Projects = () => {
                   </div>
                 ))
               }
-              <a href="/projects" className="btn btn-icon-circle rounded-pill bg-white fw-bold mt-50">
+              <a href="/page-portfolio-app" className="btn btn-icon-circle rounded-pill bg-white fw-bold mt-50">
                 <small> More Projects <i className="fas fa-long-arrow-alt-right bg-light"></i> </small>
               </a>
             </div>

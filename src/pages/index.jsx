@@ -12,9 +12,9 @@ import Services from '../components/ITCreative/Services';
 import Projects from '../components/ITCreative/Projects';
 import Testimonials from '../components/ITCreative/Testimonials';
 import ChooseUs from '../components/ITCreative/ChooseUs';
-import Blog from '../components/ITCreative/Blog';
+//import Blog from '../components/ITCreative/Blog';
 import ChatBanner from '../components/ITCreative/ChatBanner';
-import Footer from '../components/ITCreative/Footer';
+import Footer from '../components/About/Footer';
 //= Styles
 import '../assets/css/main.css';
 
@@ -32,7 +32,7 @@ const HomeItSolutions2 = () => {
         <Projects />
         <Testimonials />
         <ChooseUs />
-        <Blog />
+        {/* <Blog /> */}
         <ChatBanner />
       </main>
       <Footer />

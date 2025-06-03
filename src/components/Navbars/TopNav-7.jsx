@@ -9,18 +9,13 @@ const TopNav7 = () => {
             <div className="top_info">
               <a href="mailto:info@iteck-tech.com" className="me-4">
                 <i className="fas fa-envelope-open me-2 color-blue7"></i>
-                <span>info@iteck-tech</span>
+                <span>
+                lathusanthurairajah@codearson.com</span>
               </a>
-              <a href="tel:+89000786999">
+              <a href="tel:+447440641608">
                 <i className="fas fa-phone me-2 color-blue7"></i>
-                <span>+89 (000) 786 999</span>
+                <span>+44 7440 641608</span>
               </a>
-            </div>
-          </div>
-          <div className="col-5">
-            <div className="side_links d-flex justify-content-lg-end">
-              <a href="/careers" className="me-4"> Careers </a>
-              <a href="/faq" className="me-4"> Faq </a>
             </div>
           </div>
         </div>

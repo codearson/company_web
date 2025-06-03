@@ -18,12 +18,12 @@ const Header = () => {
                   Choose The <br /> <span className="num"> #01 </span> <span className="text-grad"> IT Solutions </span> <br /> WP Theme.
                 </h1>
                 <div className="d-flex flex-wrap">
-                  <a href="#0" className="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4" target="_blank">
+                  <a href="/page-contact-app" className="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4" target="_blank">
                     <small> Get Started Now <i className="fas fa-long-arrow-alt-right"></i> </small>
                   </a>
                   <div className="inf mt-3 mt-lg-0">
                     <p className="color-999"> Support Email </p>
-                    <a href="mailto:info@support-iteck.com" className="fw-bold"> info@support-iteck.com </a>
+                    <a href="mailto:lathusanthurairajah@codearson.com" className="fw-bold"> lathusanthurairajah@codearson.com </a>
                   </div>
                 </div>
               </div>

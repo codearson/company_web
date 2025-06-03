@@ -85,7 +85,7 @@ const Features = () => {
           }
         </div>
         <div className="btns text-center mt-10">
-          <a href="/features" className="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4 mb-4 mb-lg-0">
+          <a href="/page-about-app" className="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4 mb-4 mb-lg-0">
             <small> Learn More <i className="fas fa-long-arrow-alt-right"></i> </small>
           </a>
           <a href="/pricing" className="btn btn-icon-circle rounded-pill bg-white fw-bold me-4">

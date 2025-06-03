@@ -15,10 +15,10 @@ const ChatBanner = () => {
               <p> Hire Us For Your Project </p>
               <h3> Lets Work Together </h3>
               <div className="btns mt-50">
-                <a href="#0" className="btn btn-icon-circle rounded-pill bg-black fw-bold text-white me-4 mb-3 mb-lg-0">
+                <a href="/page-portfolio-app" className="btn btn-icon-circle rounded-pill bg-black fw-bold text-white me-4 mb-3 mb-lg-0">
                   <small> Estimate Project <i className="fas fa-long-arrow-alt-right"></i> </small>
                 </a>
-                <a href="#0" className="btn btn-icon-circle rounded-pill fw-bold me-4 brd-light text-white hover-blue7">
+                <a href="/page-contact-app" className="btn btn-icon-circle rounded-pill fw-bold me-4 brd-light text-white hover-blue7">
                   <small> Contact Us <i className="fas fa-long-arrow-alt-right bg-light"></i> </small>
                 </a>
               </div>
