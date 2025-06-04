@@ -1,6 +1,11 @@
 import React from 'react';
 
 const SecondContent = ({ accordions, rtl }) => {
+  // Function to run when arrow is clicked
+  const handleArrowClick = (id) => {
+    console.log('Accordion arrow clicked, id:', id);
+  };
+
   return (
     <div className="content sec-content">
       <div className="container">
@@ -25,7 +30,7 @@ const SecondContent = ({ accordions, rtl }) => {
                     accordions.map((accordion, index) => (
                       <div className="accordion-item" key={index}>
                         <h2 className="accordion-header" id={`heading${accordion.id}`}>
-                          <button className={`accordion-button ${index !== 0 ?'collapsed':''}`} type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${accordion.id}`} aria-expanded="true" aria-controls={`collapse${accordion.id}`}>
+                          <button className={`accordion-button ${index !== 0 ?'collapsed':''}`} type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${accordion.id}`} aria-expanded="true" aria-controls={`collapse${accordion.id}`} onClick={() => handleArrowClick(accordion.id)}>
                             { accordion.title }
                           </button>
                         </h2>
