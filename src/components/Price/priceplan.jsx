@@ -24,7 +24,7 @@ const PricePlan = () => {
               <div
                 className={`flex flex-col p-6 rounded-lg shadow-md xl:p-8 relative  ${
                   plan.recommended
-                    ? "text-dark "
+                    ? "text-dark"
                     : "text-gray-900 bg-gray-50 border border-gray-300 "
                 }`}
                 style={

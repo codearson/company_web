@@ -6,7 +6,7 @@ import MainLayout from "../../layouts/Main";
 //= Components
 import TopNav from "../../components/Navbars/TopNav-7";
 import Navbar from "../../components/Navbars/ITCreativeNav";
-import PricePlan from "../../components/Price/pricePlan.jsx ";
+import PricePlan from "../../components/Price/priceplan";
 import Footer from "../../components/About/Footer";
 
 const PagePriceApp = () => {
