@@ -2,6 +2,11 @@ import React from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const SecondContent = ({ accordions, rtl }) => {
+  // Function to run when arrow is clicked
+  const handleArrowClick = (id) => {
+    console.log("Accordion arrow clicked, id:", id);
+  };
+
   return (
     <div className="content sec-content">
       <div className="container">
@@ -37,8 +42,9 @@ const SecondContent = ({ accordions, rtl }) => {
                           type="button"
                           data-bs-toggle="collapse"
                           data-bs-target={`#collapse${accordion.id}`}
-                          aria-expanded="true"
+                          aria-expanded={index === 0 ? "true" : "false"}
                           aria-controls={`collapse${accordion.id}`}
+                          onClick={() => handleArrowClick(accordion.id)}
                         >
                           {accordion.title}
                         </button>
